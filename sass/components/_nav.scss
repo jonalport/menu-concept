@@ -1,0 +1,118 @@
+// nav component
+
+$nav_bg: $darkest_gray;
+
+.nav {
+  background: $nav_bg;
+}
+.nav__content {
+  overflow: hidden;
+  height: 0px;
+  transition: all 0.3s ease;
+}
+.nav, .nav__link {
+  color: #73777a;
+}
+.nav__subhead {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: rem(11);
+  padding: 2px 30px;
+  color: #6a717b;
+  margin: 30px 0 4px 0;
+  letter-spacing: 1px;
+}
+.nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+.nav__item {
+  padding: 0 30px;
+}
+.nav__link {
+  text-decoration: none;
+  line-height: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
+}
+.nav__item--selected .nav__link,
+.nav__link:focus,
+.nav__link:hover {
+  color: #fff;
+}
+.nav__icon {
+  fill: #73777a;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  margin-bottom: -1px;
+  transition: all 0.25s ease;
+}
+.nav__item--selected .nav__icon,
+.nav__link:focus .nav__icon,
+.nav__link:hover .nav__icon {
+  fill: #fff;
+}
+.header--nav {
+  font-size: rem(20);
+  background: #156797;
+  position: relative;
+}
+.header--nav__site-link {
+  color: #fff;
+  text-decoration: none;
+}
+.header--nav__site-link:focus, 
+.header--nav__site-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+.header--nav__menu-button {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  margin-top: -12px;
+  height: 24px;
+  width: 24px;
+  display: block;
+  cursor: pointer;
+}
+.header--nav__menu-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 24px;
+  width: 24px;
+}
+.header--nav__menu-icon path {
+  fill: #fff;
+}
+.header--nav__menu-icon--hamburger {
+  /*display: none;*/
+}
+.header--nav__menu-icon--close {
+  display: none;
+}
+.menu-is-open {
+  .nav__content {
+    height: auto;
+    padding: 20px 0;
+  }
+  .header--nav__menu-icon--hamburger {
+    display: none;
+  }
+  .header--nav__menu-icon--close {
+    display: block;
+  }  
+}
+.no-js {
+  .nav__content {
+    height: auto;
+    padding: 20px 0;
+  }
+  .header--nav__menu-button {
+    display: none;
+  }
+}

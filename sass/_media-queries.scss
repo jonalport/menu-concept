@@ -1,0 +1,61 @@
+@media only screen and (min-width: 550px) {
+  .nav__group--community,
+  .nav__group--home-help,
+  .nav__group--subjects-school {
+    float: left;
+    width: 33.3%;
+  }
+  .nav__group--subjects .nav__subhead,
+  .nav__group--community .nav__subhead {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .nav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+  }
+  .nav__group {
+    float: none;
+    width: 100%;
+  }
+  .nav__content {
+    height: auto;
+    padding: 20px 0;
+  }
+  .nav__link {
+    display: block;
+  }
+  .menu-is-open .main,
+  .main {
+    margin: 0;
+    margin-left: 200px;
+    opacity: 1;
+  }
+  .nav__item--selected {
+    border-left: 5px solid #fff;
+    padding-left: 25px;
+  }
+  .header--nav__menu-button {
+    display: none;
+  }
+  .nav__group--subjects .nav__subhead,
+  .nav__group--community .nav__subhead {
+    margin-top: 30px;
+  }
+  .content {
+    padding: 24px 42px 42px 42px;
+  }
+  .header--main {
+    padding: 15px 42px 14px 42px;
+  }
+  .nav__group--help {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+  }
+  .nav__group--help .nav__subhead {
+    display: none;
+  }
+}

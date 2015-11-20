@@ -1,0 +1,70 @@
+// General stuff
+
+html {
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #262728;
+  height: 100%;
+}
+.a11y, 
+.hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+.header {
+  line-height: 40px;
+  padding: 15px 30px;
+}
+.main {
+  background: #fbfbfb;
+  transition: all 0.3s ease;
+}
+.menu-is-open {
+  .main {
+    margin: 0 20px;
+    opacity: 0.7;
+  }
+}
+.content {
+  padding: 24px 30px 30px 30px;
+}
+.page_heading {
+  line-height: 40px;
+  font-size: rem(24);
+  margin: 0;
+  font-weight: 400;
+}
+.header--main {
+  border-bottom: 1px solid #eaeaea;
+  padding: 15px 30px 14px 30px;
+  background: #fff;
+}
+.greeting {
+  font-size: rem(32);
+}
+.section {
+  border: 1px solid #eaeaea;
+  margin-top: 40px;
+  background: #fff;
+  min-height: 300px;
+}
+.section__heading {
+  border-bottom: 1px solid #eaeaea;
+  margin: 0;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: rem(14);
+}
+.section__content {
+  padding: 20px 24px;
+}

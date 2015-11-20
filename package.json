@@ -1,0 +1,46 @@
+{
+  "name": "hsc_menu",
+  "private": true,
+  "author": "Jon Alport <jon@jonalport.com>",
+  "version": "1.0.0",
+  "description": "Responsive menu concept",
+  "main": "src/js/index.js",
+  "license": "ISC",
+  "repository": { 
+    "type": "git",
+    "url": "https://github.com/jonalport/menu-concept"
+  },
+  "scripts": {
+    "setup": "npm install && npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "browserify -t babelify -g uglifyify -e src/js/index.js > public/js/bundle.js",
+    "watch-js": "watchify src/js/index.js -do public/js/bundle.js",
+    "build": "npm run clean && npm run build-assets && npm run copy-html",
+    "clean": "rm -rf public && mkdir public && mkdir public/js && mkdir public/css",
+    "copy-html": "cp -r src/*.html public/",
+    "watch-html": "nodemon --watch src -e html -x \"npm run copy-html\"",
+    "server": "http-server -p 5555 public/",
+    "build-css": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --include-path node_modules/bourbon-neat/app/assets/stylesheets --include-path sass sass/main.scss public/css/bundle.css",
+    "build-min-css": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --include-path node_modules/bourbon-neat/app/assets/stylesheets --include-path sass sass/main.scss | cleancss -o public/css/bundle.min.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build-assets": "npm run build-js & npm run build-css",
+    "watch": "npm run watch-html & npm run watch-js & npm run watch-css"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "clean-css": "^3.4.8",
+    "http-server": "^0.8.5",
+    "jshint": "^2.9.1-rc1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.8.1",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.6.1"
+  },
+  "dependencies": {
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.2",
+    "fastclick": "^1.0.6",
+    "jquery": "^2.1.4"
+  }
+}
